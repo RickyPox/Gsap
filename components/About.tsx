@@ -9,13 +9,13 @@ const About = () => {
             type: "words",
         });
 
-        const scrollTimeline = gsap
-            .timeline({
-                scrollTrigger: {
-                    trigger: "#about",
-                    start: "top center",
-                },
-            })
+        const scrollTimeline = gsap.timeline({
+            scrollTrigger: {
+                trigger: "#about",
+                start: "top center",
+            },
+        });
+        scrollTimeline
             .from(titleSplit.words, {
                 opacity: 0,
                 duration: 1,

@@ -67,15 +67,13 @@ const Hero = () => {
                 },
             }).to(video, { currentTime: video.duration, ease: "none" });
 
-            ScrollTrigger.refresh(); // garante recálculo
+            ScrollTrigger.refresh();
         };
 
-        // 1) se o metadata já estiver disponível, cria de imediato
         if (video.readyState >= 1) {
             // HAVE_METADATA
             initTimeline();
         } else {
-            // 2) caso contrário, espera pelo evento
             video.addEventListener("loadedmetadata", initTimeline, { once: true });
         }
     }, []);
